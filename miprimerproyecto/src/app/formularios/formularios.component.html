@@ -1,20 +1,25 @@
 <h1>Formularios</h1>
 
-<input
-  type="text"
-  placeholder="Nombre"
-  [formControl]="name"
-/>
-
-<pre><code><span>{{ name | json }}</span></code></pre>
-
-<div>
+<form [formGroup]="form">
   <input
-    type="checkbox"
-    name="checkbox"
-    [formControl]="checkboxIsChecked"
+    type="text"
+    placeholder="Nombre"
+    formControlName="name"
   />
-  {{ checkboxIsChecked.value }}
-</div>
 
-<button [disabled]="name.errors">Enviar</button>
+  <pre><code><span>{{ form.get('name')?.value }}</span></code></pre>
+
+  <div>
+    <input
+      type="checkbox"
+      name="checkbox"
+      formControlName="checkboxIsChecked"
+    />
+    {{ form.get('checkboxIsChecked')?.value }}
+  </div>
+
+  <button [disabled]="form.invalid">Enviar</button>
+
+  <br />
+  <pre><code>{{ form.value | json }}</code></pre>
+</form>
