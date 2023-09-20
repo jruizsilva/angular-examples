@@ -1,0 +1,20 @@
+<h1>Formularios</h1>
+
+<input
+  type="text"
+  placeholder="Nombre"
+  [formControl]="name"
+/>
+
+<pre><code><span>{{ name | json }}</span></code></pre>
+
+<div>
+  <input
+    type="checkbox"
+    name="checkbox"
+    [formControl]="checkboxIsChecked"
+  />
+  {{ checkboxIsChecked.value }}
+</div>
+
+<button [disabled]="name.errors">Enviar</button>

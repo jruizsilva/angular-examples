@@ -1,0 +1,17 @@
+Uppercase
+{{ name | uppercase }}
+<hr />
+Titlecase
+{{ name | titlecase }}
+<hr />
+Lowercase
+{{ apellido | lowercase }}
+<hr />
+Date
+{{ date | date : "short" }}
+<hr />
+
+<p>Estado de transaccion: {{ estado | estados }}</p>
+
+<button (click)="changeState()">Cambiar estado</button>
+<button>Hola</button>
