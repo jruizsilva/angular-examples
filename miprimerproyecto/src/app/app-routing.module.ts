@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { PipesComponent } from './pipes/pipes.component';
-import { EstructuralComponent } from './estructural/estructural.component';
-import { ListadoComponent } from './compra/listado/listado.component';
-import { HistorialCompraComponent } from './compra/historial-compra/historial-compra.component';
-import { NuevaCompraComponent } from './compra/nueva-compra/nueva-compra.component';
-import { authGuard } from './auth.guard';
-import { FormulariosComponent } from './formularios/formularios.component';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { PipesComponent } from './pipes/pipes.component'
+import { EstructuralComponent } from './estructural/estructural.component'
+import { ListadoComponent } from './compra/listado/listado.component'
+import { HistorialCompraComponent } from './compra/historial-compra/historial-compra.component'
+import { NuevaCompraComponent } from './compra/nueva-compra/nueva-compra.component'
+import { authGuard } from './auth.guard'
+import { FormulariosComponent } from './formularios/formularios.component'
+import { PostsComponent } from './posts/posts.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'pipes', pathMatch: 'full' },
@@ -18,23 +19,27 @@ const routes: Routes = [
     canActivate: [authGuard],
     children: [
       { path: 'nueva', component: NuevaCompraComponent },
-      { path: 'historial', component: HistorialCompraComponent },
-    ],
+      { path: 'historial', component: HistorialCompraComponent }
+    ]
   },
   {
     path: 'venta',
     loadChildren: () =>
-      import('./venta/venta.module').then((m) => m.VentaModule),
+      import('./venta/venta.module').then((m) => m.VentaModule)
   },
   {
     path: 'formularios',
-    component: FormulariosComponent,
+    component: FormulariosComponent
   },
-];
+  {
+    path: 'posts',
+    component: PostsComponent
+  }
+]
 
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
