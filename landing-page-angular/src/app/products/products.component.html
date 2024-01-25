@@ -1,10 +1,10 @@
-<table class="table">
+<table class="table max-w-3xl mx-auto mt-5">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Detalle</th>
     </tr>
   </thead>
   <tbody>
@@ -12,19 +12,40 @@
       <th scope="row">1</th>
       <td>Mark</td>
       <td>Otto</td>
-      <td>sda</td>
+      <td>
+        <button
+          class="btn btn-outline-primary"
+          [routerLink]="['/products', 'red', 'lavandina']"
+        >
+          Detalle
+        </button>
+      </td>
     </tr>
     <tr>
       <th scope="row">1</th>
       <td>Mark</td>
       <td>Otto</td>
-      <td>sda</td>
+      <td>
+        <button
+          class="btn btn-outline-primary"
+          [routerLink]="['/products', 'green', 'limpia-vidrio']"
+        >
+          Detalle
+        </button>
+      </td>
     </tr>
     <tr>
       <th scope="row">1</th>
       <td>Mark</td>
       <td>Otto</td>
-      <td>sda</td>
+      <td>
+        <button
+          class="btn btn-outline-primary"
+          [routerLink]="['/products', 'cyan', 'lavandina']"
+        >
+          Detalle
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
