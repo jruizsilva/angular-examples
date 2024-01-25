@@ -1,37 +1,17 @@
+import { CurrencyPipe, NgClass, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-}
+import { products } from './products.mock';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, NgFor, CurrencyPipe, NgClass],
   templateUrl: './products.component.html',
   styles: ``,
 })
 export class ProductsComponent {
-  products: Product[] = [
-    {
-      id: 1,
-      name: 'Product 1',
-      price: 10,
-    },
-    {
-      id: 2,
-      name: 'Product 2',
-      price: 20,
-    },
-    {
-      id: 3,
-      name: 'Product 3',
-      price: 30,
-    },
-  ];
+  products: Product[] = products;
 
   selectedProduct: any;
 }
