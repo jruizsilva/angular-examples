@@ -1,0 +1,12 @@
+<!-- <app-hijo
+  [fatherData]="data"
+  (sendMessageEmitter)="recibirMensaje($event)"
+  (incrementarEmitter)="incrementar()"
+  (decrementarEmitter)="decrementar()"
+/>
+<h5>{{ mensajeRecibido }}</h5>
+
+<h1 class="text-2xl text-center">Contador: {{ contador }}</h1> -->
+<h1 appFamiliaEstilos class="text-2xl">{{ name }}</h1>
+<p-button (click)="saludarHermanoPequeno()">Saludar</p-button>
+<p-button (click)="preguntarPorHijo()">Preguntar por hijo</p-button>

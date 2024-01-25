@@ -1,0 +1,16 @@
+@import "primeng/resources/themes/lara-dark-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+@tailwind components;
+@tailwind utilities;
+
+/* Order */
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+  button {
+    /* CSS to Reset */
+    box-shadow: none;
+  }
+}
