@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MenuItem } from 'primeng/api';
-import { MenubarModule } from 'primeng/menubar';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MenubarModule],
+  imports: [RouterOutlet, RouterModule],
   templateUrl: './app.component.html',
   styles: ``,
 })
 export class AppComponent implements OnInit {
   title = 'landing-page-angular';
-  items: MenuItem[] = [];
+  items: { label: string }[] = [];
 
   ngOnInit(): void {
     this.items = [
