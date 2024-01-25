@@ -2,18 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Order */
-@layer reset, primeng;
-
-/* Reset CSS */
-@layer reset {
-  /* CSS to Reset */
-  button {
-    box-shadow: none;
-  }
-}
-
-:root {
-  color-scheme: dark;
-}
