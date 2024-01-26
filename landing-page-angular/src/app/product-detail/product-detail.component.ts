@@ -27,10 +27,10 @@ export class ProductDetailComponent implements OnInit {
         );
         this.loading = false;
         this.color =
-          this.product !== undefined && this.product?.price > 5
-            ? 'text-danger'
-            : 'text-primary';
+          this.product !== undefined && this.product?.price > 25
+            ? 'red'
+            : 'blue';
       });
-    }, 1500);
+    }, 1000);
   }
 }

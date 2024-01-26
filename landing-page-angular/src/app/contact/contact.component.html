@@ -1,1 +1,69 @@
-<p>contact works!</p>
+<div class="container">
+  <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+        [ngClass]="{
+          'is-invalid': hasErrors('name', 'required')
+        }"
+      />
+      <div class="text-danger" *ngIf="hasErrors('name', 'required')">
+        Nombre requerido
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="surname" class="form-label">Apellido</label>
+      <input
+        type="text"
+        class="form-control"
+        id="surname"
+        formControlName="surname"
+        [ngClass]="{
+          'is-invalid': hasErrors('surname', 'required')
+        }"
+      />
+      <div class="text-danger" *ngIf="hasErrors('surname', 'required')">
+        Apellido requerido
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="dni" class="form-label">Dni</label>
+      <input
+        type="text"
+        class="form-control"
+        id="dni"
+        formControlName="dni"
+        [ngClass]="{
+          'is-invalid': hasErrors('dni', 'required')
+        }"
+      />
+      <div class="text-danger" *ngIf="hasErrors('dni', 'required')">
+        Dni requerido
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+        [ngClass]="{
+          'is-invalid':
+            hasErrors('email', 'email') || hasErrors('email', 'required')
+        }"
+      />
+      <div class="text-danger" *ngIf="hasErrors('email', 'email')">
+        Email no valido
+      </div>
+      <div class="text-danger" *ngIf="hasErrors('email', 'required')">
+        Email es requerido
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
